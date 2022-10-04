@@ -8,11 +8,9 @@
  * @returns void
  */
 const summary = (studentsArray, totalPoints) => {
-  const sortedFirstArray = studentsArray.sort((a, b) =>
-    a.name.localeCompare(b.name),
-  )
+  const sortedArray = studentsArray.sort((a, b) => a.name.localeCompare(b.name))
 
-  sortedFirstArray.map((student) => {
+  sortedArray.map((student) => {
     console.log(`${student.name} ${student.score}`)
     totalPoints += student.score
   })
