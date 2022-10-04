@@ -1,4 +1,4 @@
-## Koda Kollective Programming Exam
+## Description
 - A simple program that will allow you to input two schools
 students scores and identify the winner based on the total
 points.
