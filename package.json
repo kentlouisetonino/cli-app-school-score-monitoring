@@ -1,5 +1,6 @@
 {
-  "name": "cli-app-school-score-monitoring",
+  "name": "school-score-monitoring",
+  "author": "Kent Louise G. Tonino",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -7,8 +8,6 @@
     "start": "node ./src/index.js",
     "format": "prettier --write \"src/**/*.js\""
   },
-  "keywords": [],
-  "author": "Kent Louise G. Tonino",
   "license": "ISC",
   "dependencies": {
     "chalk-animation": "^2.0.3",
