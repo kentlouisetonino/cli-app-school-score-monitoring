@@ -10,5 +10,5 @@ npm install
 npm start 
 ```
 
-## Recorings
+## Recording
 [Programming Exercise.webm](https://user-images.githubusercontent.com/69438999/193799632-0b1d7e2d-4e97-4966-a3af-fdb4bdf92e31.webm)
