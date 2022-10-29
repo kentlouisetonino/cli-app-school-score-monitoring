@@ -1,16 +1,17 @@
 import process from 'node:process'
 
-import questionnaire from './questionnaire.helper.js'
+import questionnaire from './questionnaire.js'
 
-/**
- * This function will handle the acquisition of inputs of
- * students. This will not return anything, only push the
- * object to the array.
- *
- * @param {[{ name: String, score: Number }] | []} studentsArray Array of objects.
- * @returns void
- */
-const studentsInfo = (studentsArray) => {
+export interface StudentInfo {
+  name: string
+  score: number
+}
+
+interface Props {
+  studentsArray: StudentInfo[]
+}
+
+export default function studentsInfo({ studentsArray }: Props) {
   do {
     const studentName = questionnaire(
       `#${studentsArray.length + 1} Student Name: `,
@@ -25,7 +26,7 @@ const studentsInfo = (studentsArray) => {
       `#${studentsArray.length + 1} Student Score: `,
     )
 
-    if (isNaN(studentScore) || !studentScore) {
+    if (isNaN(Number(studentScore)) || !studentScore) {
       console.log('\nInvalid Input. Student score is not a number.')
       process.exit()
     }
@@ -36,5 +37,3 @@ const studentsInfo = (studentsArray) => {
     })
   } while (studentsArray.length !== 5)
 }
-
-export default studentsInfo
