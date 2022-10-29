@@ -5,7 +5,7 @@ students scores and identify the winner based on the total points.
 <br />
 
 ## Technology Stack
-> JavaScript • NodeJS
+> [Chalk Animation](https://www.npmjs.com/package/chalk-animation) • [Prompt Sync](https://www.npmjs.com/package/prompt-sync) • [Prettier](https://www.npmjs.com/package/prettier) • [TypeScript](https://www.npmjs.com/package/typescript) • [NodeJS](https://nodejs.org/docs/latest-v16.x/api/) • [GitHub Actions Workflow](https://docs.github.com/en/actions/using-workflows/about-workflows)
 
 <br />
 
@@ -14,7 +14,7 @@ students scores and identify the winner based on the total points.
 > - Run the following commands.
 ```bash
 npm install
-npm start 
+npm run start 
 ```
 
 <br />
