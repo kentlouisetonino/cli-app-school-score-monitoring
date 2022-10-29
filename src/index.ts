@@ -1,9 +1,9 @@
 import process from 'node:process'
 
-import message from './helper/message.helper.js'
-import questionnaire from './helper/questionnaire.helper.js'
-import studentsInfo from './helper/students-info.helper.js'
-import summary from './helper/summary.helper.js'
+import message from './libs/message.js'
+import questionnaire from './libs/questionnaire.js'
+import studentsInfo, { StudentInfo } from './libs/students-info.js'
+import summary from './libs/summary.js'
 
 /* 
   Handling inputs for School 1.
@@ -16,8 +16,9 @@ if (!firstSchoolName) {
   process.exit()
 }
 
-const firstSchoolStudents = []
-studentsInfo(firstSchoolStudents)
+const firstSchoolStudents: StudentInfo[] = []
+studentsInfo({ studentsArray: firstSchoolStudents })
+console.clear()
 
 /* 
   Handling inputs for School 2.
@@ -30,8 +31,9 @@ if (!secondSchoolName) {
   process.exit()
 }
 
-const secondSchoolStudents = []
-studentsInfo(secondSchoolStudents)
+const secondSchoolStudents: StudentInfo[] = []
+studentsInfo({ studentsArray: secondSchoolStudents })
+console.clear()
 
 /* 
   Handling the calculation of scores per school and
@@ -40,16 +42,22 @@ studentsInfo(secondSchoolStudents)
 console.log('\n--------------SUMMARY--------------')
 console.log(firstSchoolName)
 let firstSchoolTotalPoints = 0
-summary(firstSchoolStudents, firstSchoolTotalPoints)
+summary({
+  studentsArray: firstSchoolStudents,
+  totalPoints: firstSchoolTotalPoints,
+})
 
 console.log(secondSchoolName)
 let secondSchoolTotalPoints = 0
-summary(secondSchoolStudents, secondSchoolTotalPoints)
+summary({
+  studentsArray: secondSchoolStudents,
+  totalPoints: secondSchoolTotalPoints,
+})
 
-await message(
-  `Winner: ${
+await message({
+  message: `Winner: ${
     firstSchoolTotalPoints > secondSchoolTotalPoints
       ? firstSchoolName
       : secondSchoolName
   }`,
-)
+})
