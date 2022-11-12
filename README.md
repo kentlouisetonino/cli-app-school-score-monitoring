@@ -1,5 +1,5 @@
 ## Description
-> A CLI Application that will allow you to input two schools
+> A CLI application that will allow you to input two schools
 students scores and identify the winner based on the total points.
 
 <br />
